@@ -15,15 +15,15 @@ Low=st.number_input("Low")
 volume=st.number_input("Total Trade Quantity")
 turnover=st.number_input("Turnover(Lacs)")
 
+if st.button("Predict"):
+    input_data = np.array([[open_price, high_price, low_price, volume, turnover]])
+    input_scaled = scaler.transform(input_data)
+    prediction = model.predict(input_scaled)
 
-if st.button("predict"):
-  input.data=np.array([[Open,High,Low,volume,turnover]])
-  input.scaler=scaler.transform(input_data)
-  prediction=model.predict(input.scaler)
-
-
-  if prediction[0]==1:
-    st.write("Stock price will go UP")
+    if prediction[0] == 1:
+        st.success("📈 Stock Price will go UP")
     else:
-      st.error("stock price will go DOWN")
+        st.error("📉 Stock Price will go DOWN")
+
+
 
