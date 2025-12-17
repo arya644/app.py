@@ -2,8 +2,8 @@ import streamlit as st
 import numpy as np
 import joblib
 
-model = joblib.load("stock_model.pkl")
-scaler = joblib.load("scaler.pkl")
+model = joblib.dump(model,"stock_model.pkl")
+scaler = joblib.dump(scaler"scaler.pkl")
 
 st.title("📈 Stock Price Movement Predictor")
 
@@ -22,4 +22,5 @@ if st.button("Predict"):
         st.success("📈 Stock Price will go UP")
     else:
         st.error("📉 Stock Price will go DOWN")
+
 
