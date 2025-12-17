@@ -3,7 +3,7 @@ import joblib
 import numpy as np
 
 # Load model and scaler
-model = joblib.load("Stock_model.pkl")
+model = joblib.load("stock_model.pkl")
 scaler = joblib.load("scaler.pkl")
 
 st.title("📈 Stock Price Movement Predictor")
@@ -26,3 +26,4 @@ if st.button("Predict"):
         st.success("📈 Stock Price will go UP")
     else:
         st.error("📉 Stock Price will go DOWN")
+
